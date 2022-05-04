@@ -7,7 +7,7 @@ std::vector<std::vector<int>> GraphReader::readToMatrix(std::string path)
 
         int matrixSize;
 
-        path >> matrixSize;
+        file >> matrixSize;
 
         std::vector<std::vector<int>> neighboursList;
         std::vector<std::vector<int>> matrix(matrixSize, std::vector<int>(matrixSize));
@@ -31,7 +31,7 @@ std::vector<std::vector<int>> GraphReader::readToList(std::string path)
 
         int matrixSize;
 
-        path >> matrixSize;
+        file >> matrixSize;
 
         std::vector<std::vector<int>> neighboursList;
         std::vector<std::vector<int>> matrix(matrixSize, std::vector<int>(matrixSize));

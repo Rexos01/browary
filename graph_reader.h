@@ -7,10 +7,11 @@
 #include <fstream>
 #include <string>
 #include <list>
-#include <algorithm> 
+#include <algorithm>
 
 class GraphReader
 {
+public:
     static std::vector<std::vector<int>> readToMatrix(std::string path);
     static std::vector<std::vector<int>> readToList(std::string path);
 };
