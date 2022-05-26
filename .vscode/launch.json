@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Запустить",
+            "name": "(gdb) Запуск канала",
             "type": "cppdbg",
             "request": "launch",
             "program": "Введите имя программы, например: ${workspaceFolder}/a.exe",
@@ -14,8 +14,13 @@
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
+            "pipeTransport": {
+                "debuggerPath": "/usr/bin/gdb",
+                "pipeProgram": "<Полный путь к программе канала, например: plink.exe>",
+                "pipeArgs": [],
+                "pipeCwd": ""
+            },
             "MIMode": "gdb",
-            "miDebuggerPath": "/path/to/gdb",
             "setupCommands": [
                 {
                     "description": "Включить автоматическое форматирование для gdb",
@@ -29,6 +34,7 @@
                 }
             ]
         }
-
+        
+       
     ]
 }

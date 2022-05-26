@@ -1,48 +1,89 @@
 #include "graph_reader.h"
 
-
 std::vector<std::vector<int>> GraphReader::readToMatrix(std::string path)
 {
     std::ifstream file(path);
 
-        int matrixSize;
+    int matrixSize;
 
-        file >> matrixSize;
+    file >> matrixSize;
+    matrixSize += 2; // dodanie zrodla i ujscia
 
-        std::vector<std::vector<int>> neighboursList;
-        std::vector<std::vector<int>> matrix(matrixSize, std::vector<int>(matrixSize));
+    std::vector<std::vector<int>> matrix(matrixSize, std::vector<int>(matrixSize)); // automatycznie wypelniane zerami
 
-        // b --> s --> d --> start --> end
-        int a, b; //wspolrzedne w macierzy
-        int u, v, x;
+    int u, v, x;
 
-        while(!file.eof())
-        {
-            file >> u >> v >> x;
-            matrix[u][v] = x;
-        }
+    while (!file.eof())
+    {
+        file >> u >> v >> x;
+        matrix[u][v] = x;
+    }
+
+    file.close();
 
     return matrix;
 }
 
 std::vector<std::vector<int>> GraphReader::readToList(std::string path)
 {
-    std::ifstream file(path);
+    std::ifstream file(path); // obs. bledow ?
 
-        int matrixSize;
+    int matrixSize;
+    matrixSize += 2; // dodanie zrodla i ujscia
 
-        file >> matrixSize;
+    file >> matrixSize;
 
-        std::vector<std::vector<int>> neighboursList;
-        std::vector<std::vector<int>> matrix(matrixSize, std::vector<int>(matrixSize));
+    std::vector<std::vector<int>> neighboursList;
 
-        // b --> s --> d --> start --> end
-        int a, b; //wspolrzedne w macierzy
-        int u, v, x;
+    int u, v, x;
 
-        while(!file.eof())
+    while (!file.eof())
+    {
+        file >> u >> v >> x;
+        neighboursList[u].push_back(v);
+    }
+
+    file.close();
+
+    return neighboursList;
+}
+
+std::vector<std::vector<int>> GraphReader::addSource(std::vector<std::vector<int>> matrix, std::string path, char z, char u)
+{
+    /*  file ex.
+        k 3 9
+        p 5 2
+        b 2 2
+        p 4 9
+    */
+
+    std::ifstream file(path); // obs. bledow ?
+
+    char name;
+    // char s = z;
+    // char d = u;
+    int x, y;
+
+    // matrix zostal powiekszony przy wczytywaniu danych
+
+    while (!file.eof())
+    {
+        file >> name >> x >> y;
+
+        int source = matrix.size() - 1;
+        int dest = matrix.size() - 2;
+
+        if (name == z)
         {
-            file >> u >> v >> x;
-             neighboursList[u].push_back(v);
+            matrix[source][x] = y;
         }
+        else if (name == u)
+        {
+            matrix[x][dest] = y;
+        }
+    }
+
+    file.close();
+
+    return matrix;
 }

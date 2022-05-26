@@ -46,7 +46,21 @@ void Graph::PrintGraph(){
     }
 }
 
-int Graph::MaxFlow(int s, int f)
+void Graph::UpdateMatrix(std::vector<std::vector<int>> matrix){
+    this->matrix = matrix;
+}
+
+std::vector<std::vector<int>> Graph::GetMatrix(){
+    return this->matrix;
+}
+
+void Graph::UpdateMatrixRow(std::vector<int> column, int index){
+    for(int i = 0; i < matrix.size(); i ++){
+        matrix[index][i] = column[i];
+    }
+}
+
+int Graph::MaxFlow(int s, int f, std::vector<int>& output)
 {
 
     int u, v;
@@ -54,7 +68,6 @@ int Graph::MaxFlow(int s, int f)
     std::vector<std::vector<int>> residualGraph(matrix);
     std::vector<int> path = std::vector<int>(matrix.size());
     int maxFlow = 0;
-
     while (Graph::BFS(residualGraph, s, f, path))
     {
         int pathFlow = INT_MAX;
@@ -73,6 +86,6 @@ int Graph::MaxFlow(int s, int f)
 
         maxFlow += pathFlow;
     }
+    output = residualGraph[matrix.size()- 2];
     return maxFlow;
 }
-
