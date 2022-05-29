@@ -1,9 +1,5 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-
-#include "lib/convex_set_finder.h"
-#include "lib/point.h"
+#include "lib/area.h"
 
 int main()
 {
@@ -19,14 +15,14 @@ int main()
 
   std::cout << "__" << std::endl;
 
-  std::vector<Point> set = ConvexSetFinder::findConvexSet(points);
+  Area areaOne(points, 4);
 
-  std::cout << "- " << set.size() << std::endl;
+  std::cout << "- " << areaOne.borderPoints.size() << std::endl;
   std::cout << "__" << std::endl;
 
-  for (int i = 0; i < set.size(); i++)
+  for (int i = 0; i < areaOne.borderPoints.size(); i++)
   {
-    std::cout << set[i].x << " " << set[i].y << std::endl;
+    std::cout << areaOne.borderPoints[i].x << " " << areaOne.borderPoints[i].y << std::endl;
   }
 
   return 0;
