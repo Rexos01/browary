@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "point.h"
+#include "segment.h"
 
 class Area
 {
@@ -10,6 +11,8 @@ public:
   Area(std::vector<Point> _borderPoints, int _areaValue);
 
   std::vector<Point> borderPoints;
+  std::vector<Segment> segments;
+
   int areaValue;
   int minY;
   int minX;

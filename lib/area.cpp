@@ -1,5 +1,6 @@
 #include "area.h"
 #include "point.h"
+#include "segment.h"
 
 #include <algorithm>
 #include <vector>
@@ -26,11 +27,31 @@ Area::Area(std::vector<Point> _borderPoints, int _areaValue)
   minY = getMinimalY(borderPoints)[0].y;
   maxX = getMaximumX(borderPoints)[0].x;
   maxY = getMaximumY(borderPoints)[0].y;
+
+  if (borderPoints.size() > 1)
+  {
+    for (int i = 0; i < borderPoints.size(); i++)
+    {
+      segments.push_back(Segment(borderPoints[i], borderPoints[i + 1]));
+    }
+    segments.push_back(Segment(borderPoints[borderPoints.size() - 1], borderPoints[0]));
+  }
 }
 
 bool Area::isInTheArea(Point point)
 {
-  return false;
+  Segment examiningSegment = Segment(point, Point(maxX + 1, point.y));
+  int crossedSegments = 0;
+
+  for (int i = 0; i < segments.size(); i++)
+  {
+    if (examiningSegment.intersects(segments[i]))
+    {
+      crossedSegments++;
+    }
+  }
+
+  return crossedSegments % 2 != 0;
 }
 
 std::vector<Point> Area::findConvexSet(std::vector<Point> points)

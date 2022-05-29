@@ -8,7 +8,7 @@ struct Point
 
   Point(int _x, int _y);
 
-  // Point() {}
+  Point() {}
 
   friend bool operator==(const Point a, const Point b);
   friend bool operator!=(const Point a, const Point b);
