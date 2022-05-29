@@ -44,14 +44,14 @@ std::vector<Point> ConvexSetFinder::findConvexSet(std::vector<Point> points)
     minPoint = points[0];
     for (int i = 0; i < points.size(); i++)
     {
-      if (calculatePosition(activePoint, maxPoint, points[i]) > 0)
+      if (calculatePosition(activePoint, minPoint, points[i]) < 0)
       {
-        maxPoint = points[i];
+        minPoint = points[i];
       }
     }
     activePoint = minPoint;
-    points.erase(find(points.begin(), points.end(), maxPoint));
-    convexPoints.push_back(maxPoint);
+    points.erase(find(points.begin(), points.end(), minPoint));
+    convexPoints.push_back(minPoint);
   }
 }
 
