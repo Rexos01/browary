@@ -26,6 +26,8 @@ private:
   static Point getHighestRightPoint(std::vector<Point> points);
 
   static int calculatePosition(Point a, Point b, Point c);
+
+  ConvexSetFinder() {}
 };
 
 #endif

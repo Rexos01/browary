@@ -7,17 +7,9 @@ std::vector<Point> ConvexSetFinder::findConvexSet(std::vector<Point> points)
   std::vector<Point> convexPoints;
 
   Point lowestLeftPoint = getLowestLeftPoint(points);
-  convexPoints.push_back(lowestLeftPoint);
-
-  points.erase(find(points.begin(), points.end(), lowestLeftPoint));
-
   Point highestRightPoint = getHighestRightPoint(points);
-  convexPoints.push_back(highestRightPoint);
-
-  points.erase(find(points.begin(), points.end(), highestRightPoint));
 
   Point activePoint = lowestLeftPoint;
-
   Point maxPoint = points[0];
 
   while (maxPoint != highestRightPoint)
@@ -36,7 +28,6 @@ std::vector<Point> ConvexSetFinder::findConvexSet(std::vector<Point> points)
   }
 
   Point minPoint = points[0];
-
   activePoint = highestRightPoint;
 
   while (minPoint != lowestLeftPoint)
@@ -44,7 +35,7 @@ std::vector<Point> ConvexSetFinder::findConvexSet(std::vector<Point> points)
     minPoint = points[0];
     for (int i = 0; i < points.size(); i++)
     {
-      if (calculatePosition(activePoint, minPoint, points[i]) < 0)
+      if (calculatePosition(activePoint, minPoint, points[i]) > 0)
       {
         minPoint = points[i];
       }
@@ -53,6 +44,13 @@ std::vector<Point> ConvexSetFinder::findConvexSet(std::vector<Point> points)
     points.erase(find(points.begin(), points.end(), minPoint));
     convexPoints.push_back(minPoint);
   }
+  // points.erase(find(points.begin(), points.end(), highestRightPoint));
+  // convexPoints.push_back(highestRightPoint);
+
+  // points.erase(find(points.begin(), points.end(), lowestLeftPoint));
+  // convexPoints.push_back(lowestLeftPoint);
+
+  return convexPoints;
 }
 
 bool ConvexSetFinder::compareXMin(Point a, Point b)
@@ -60,7 +58,7 @@ bool ConvexSetFinder::compareXMin(Point a, Point b)
   return a.x < b.x;
 }
 
-bool compareYMin(Point a, Point b)
+bool ConvexSetFinder::compareYMin(Point a, Point b)
 {
   return a.y < b.y;
 }
