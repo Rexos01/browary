@@ -2,7 +2,7 @@
 
 Projekt ma za zadanie wyznaczyć optymalne trasy transportu produktów przemysłu piwowarskiego lokalnymi drogami.
 
-Projekt zawiera rozwiązania następujących problemów:
+Projekt porusza zagadnienia następujących problemów:
 
 - problem maksymalnego przepływu
 - wyznaczenia otoczki wypukłej i przynależności punktu do wielokąta
@@ -11,8 +11,6 @@ Projekt zawiera rozwiązania następujących problemów:
 _Projekt realizowany bez wykorzystania bibliotek zewnętrznych._
 
 ## Kompilacja
-
----
 
 Do kompilacji należy użyć pliku `Makefile` dołączonego do projektu.
 
@@ -28,8 +26,6 @@ Wynikiem procesu będzie plik wykonywalny `shire`.
 
 ## Uruchamianie
 
----
-
 Uruchomienie projektu odbywa się poprzez komendę `shire`:
 
 ```bash
@@ -42,8 +38,6 @@ Wraz z następującymi parametrami:
 - `dane_grafu_etap_2` - ścieżka do pliku zawierającego dane grafu dla etapu 2.
 
 ## Dane wejściowe
-
----
 
 Uruchomienie algorytmu wymaga utworzenia 3 plików z danymi według następującego schematu:
 
@@ -76,8 +70,6 @@ Pierwsza kolumna wiersza powinna zawierać informacje o typie, odpowiednio:
 > Przykładowe pliki konfiguracyjne można znaleźć w katalogu `/conf`, oznaczone słowem kluczowym `*-default.txt`
 
 ## Struktura projektu
-
----
 
 - `/conf` - katalog zawierający pliki danych wejściowych
 - `/lib` - katalog zawierający pliki źródłowe projektu (`*.h` oraz `*.cpp`)
