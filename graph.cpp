@@ -60,8 +60,9 @@ void Graph::UpdateMatrixRow(std::vector<int> column, int index){
     }
 }
 
-int Graph::MaxFlow(int s, int f, std::vector<int>& output)
+int Graph::MaxFlow(int s, int f, std::vector<int> &output, std::vector<std::vector<int>> &residualOutput)
 {
+
     int u, v;
 
     std::vector<std::vector<int>> residualGraph(matrix);
@@ -85,8 +86,8 @@ int Graph::MaxFlow(int s, int f, std::vector<int>& output)
 
         maxFlow += pathFlow;
     }
-    output = residualGraph[matrix.size()- 2];
-
+    output = residualGraph[matrix.size() - 2];
+    residualOutput = residualGraph;
     return maxFlow;
 }
 
