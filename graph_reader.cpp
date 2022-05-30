@@ -48,6 +48,22 @@ std::vector<std::vector<int>> GraphReader::readToList(std::string path)
     return neighboursList;
 }
 
+std::vector<std::tuple<int,int, int>> GraphReader::readAsWeightedList(std::string path)
+{
+    std::ifstream stream(path);
+    int size;
+    stream >> size;
+    std::vector<std::tuple<int,int,int>> weightedList;
+    int s, d, w;
+    while(!stream.eof())
+    {
+        stream >> s >> d >> w;
+        weightedList.push_back(std::tuple<int,int,int>(s, d, w));
+    }
+    stream.close();
+    return weightedList;
+}
+
 std::vector<std::vector<int>> GraphReader::addSource(std::vector<std::vector<int>> matrix, std::string path, char z, char u)
 {
     /*  file ex.

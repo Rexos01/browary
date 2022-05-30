@@ -1,7 +1,13 @@
 #include "graph.h"
 
-Graph::Graph(std::vector<std::vector<int>> _matrix){
+Graph::Graph(std::vector<std::vector<int>> _matrix)
+{
     matrix = _matrix;
+}
+
+Graph::Graph(std::vector<std::tuple<int, int, int>> list)
+{
+    neighborsList = list;
 }
 
 bool Graph::BFS(std::vector<std::vector<int>> graph, int start, int finish, std::vector<int> &path)
@@ -37,30 +43,37 @@ bool Graph::BFS(std::vector<std::vector<int>> graph, int start, int finish, std:
     return false;
 }
 
-void Graph::PrintGraph(){
-    for(int i = 0; i < matrix.size(); i++){
-        for(int j = 0; j < matrix.size(); j++){
+void Graph::PrintGraph()
+{
+    for (int i = 0; i < matrix.size(); i++)
+    {
+        for (int j = 0; j < matrix.size(); j++)
+        {
             std::cout << matrix[i][j] << " ";
         }
-        std::cout<<std::endl;
+        std::cout << std::endl;
     }
 }
 
-void Graph::UpdateMatrix(std::vector<std::vector<int>> matrix){
+void Graph::UpdateMatrix(std::vector<std::vector<int>> matrix)
+{
     this->matrix = matrix;
 }
 
-std::vector<std::vector<int>> Graph::GetMatrix(){
+std::vector<std::vector<int>> Graph::GetMatrix()
+{
     return this->matrix;
 }
 
-void Graph::UpdateMatrixRow(std::vector<int> column, int index){
-    for(int i = 0; i < matrix.size(); i ++){
+void Graph::UpdateMatrixRow(std::vector<int> column, int index)
+{
+    for (int i = 0; i < matrix.size(); i++)
+    {
         matrix[index][i] = column[i];
     }
 }
 
-int Graph::MaxFlow(int s, int f, std::vector<int>& output)
+int Graph::MaxFlow(int s, int f, std::vector<int> &output, std::vector<std::vector<int>> &residualOutput)
 {
 
     int u, v;
@@ -86,6 +99,7 @@ int Graph::MaxFlow(int s, int f, std::vector<int>& output)
 
         maxFlow += pathFlow;
     }
-    output = residualGraph[matrix.size()- 2];
+    output = residualGraph[matrix.size() - 2];
+    residualOutput = residualGraph;
     return maxFlow;
 }
