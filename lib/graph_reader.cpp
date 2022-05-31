@@ -103,3 +103,47 @@ std::vector<std::vector<int>> GraphReader::addSource(std::vector<std::vector<int
 
     return matrix;
 }
+
+std::vector<Area> GraphReader::readAreas(std::string path)
+{
+    std::ifstream file(path);
+
+    std::vector<Area> areas;
+    std::vector<Point> points;
+    int areaSize, areaValue, areaIndex;
+    int x, y;
+
+    areaIndex = 0;
+    std::vector<std::vector<Point>> points;
+
+    while (!file.eof())
+    {
+        file >> areaSize >> areaValue;
+        for (int i = 0; i < areaSize; i++)
+        {
+            file >> x >> y;
+            points.push_back(Point(x, y));
+        }
+        areas[areaIndex] = Area(points, areaValue);
+        points.clear();
+        areaIndex++;
+    }
+    file.close();
+    return areas;
+}
+
+std::vector<Field> GraphReader::readFieldsPosition(std::string path) {
+    std::ifstream file(path);
+    std::vector<Field> fields;
+
+    int i, x, y;
+
+    while (!file.eof())
+    {
+        file >> i >> x >> y;
+        fields.push_back(Field(i, x, y));
+    }
+    file.close();
+
+    return fields;
+}

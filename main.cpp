@@ -1,5 +1,7 @@
 #include "lib/graph.h"
 #include "lib/graph_reader.h"
+#include "lib/point.h"
+#include "lib/area.h"
 
 void PrintVector(std::vector<int> vector)
 {
@@ -9,8 +11,30 @@ void PrintVector(std::vector<int> vector)
     }
 }
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
+    std::vector<Area> areas = GraphReader::readAreas(argv[4]);
+    std::vector<Field> fields = GraphReader::readFieldsPosition(argv[5]);
+
+    for (int i = 0; i < fields.size(); i++)
+    {
+        for (int j = 0; j < areas.size(); j++)
+        {
+            if (areas[j].isInTheArea(fields[i].position))
+            {
+                fields[i].productivity = areas[j].areaValue;
+                break;
+            }
+        }
+    }
+    for (int i = 0; i < fields.size(); i++)
+    {
+        if (fields[i].productivity != -1)
+        {
+            // TODO
+        }
+    }
+
     Graph newGraph = Graph(GraphReader::readToMatrix(argv[1]));
     newGraph.UpdateMatrix(GraphReader::addSource(newGraph.GetMatrix(), argv[2], 'p', 'b'));
     newGraph.PrintGraph();
