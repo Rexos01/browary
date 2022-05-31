@@ -28,14 +28,16 @@ Wynikiem procesu będzie plik wykonywalny `shire`.
 
 Uruchomienie projektu odbywa się poprzez komendę `shire`:
 
-```bash
-$ shire <dane_grafu_etap_1> <dane_wydajności> <dane_grafu_etap_2>
+```
+$ shire <dane_grafu_etap_1> <dane_wydajności> <dane_grafu_etap_2> <punkty_graniczne> <współrzędne_pól_uprawnych>
 ```
 
 Wraz z następującymi parametrami:
 - `dane_grafu_etap_1` - ścieżka do pliku zawierającego dane grafu dla etapu 1,
 - `dane_wydajności` - ścieżka do pliku zawierającego dane o wydajności pól uprawnych, browarów i karczm
-- `dane_grafu_etap_2` - ścieżka do pliku zawierającego dane grafu dla etapu 2.
+- `dane_grafu_etap_2` - ścieżka do pliku zawierającego dane grafu dla etapu 2,
+- `punkty_graniczne` - ścieżka do pliku zawierająca punkty graniczne obszarów wydajnościowych,
+- `współrzędne_pól_uprawnych` - ścieżka do pliku zawierającego pozycje pól uprawnych.
 
 ## Dane wejściowe
 
@@ -66,6 +68,26 @@ Pierwsza kolumna wiersza powinna zawierać informacje o typie, odpowiednio:
 - p - dla pól uprawnych,
 - b - dla browarów,
 - t - dla tawern / karczm.
+
+### Punkty graniczne
+
+Zbiór punktów granicznych wyznaczających poszczególne obszary wydajności pól uprawnych. Każdy obszar powinien być zdefiniowany następująco:
+
+```
+[liczba punktów granicznych] [wydajność obszaru]
+[współrzędna x] [współrzędna y]
+...
+```
+
+Do poprawnego działania wymagane jest utworzenie co najmniej jednego obszaru zdefiniowanego przez 3 punkty graniczne.
+
+### Pozycje pól uprawnych
+
+Plik powinien zawierać współrzędne pól uprawnych użytych w algorytmie wraz z indeksem wierzchołka grafu:
+
+```
+[indeks wierzchołka] [współrzędna x] [współrzędna y]
+```
 
 > Przykładowe pliki konfiguracyjne można znaleźć w katalogu `/conf`, oznaczone słowem kluczowym `*-default.txt`
 
