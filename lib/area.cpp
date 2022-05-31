@@ -23,10 +23,7 @@ Area::Area(std::vector<Point> _borderPoints, int _areaValue)
   borderPoints = findConvexSet(_borderPoints);
   areaValue = _areaValue;
 
-  minX = getMinimalX(borderPoints)[0].x;
-  minY = getMinimalY(borderPoints)[0].y;
   maxX = getMaximumX(borderPoints)[0].x;
-  maxY = getMaximumY(borderPoints)[0].y;
 
   if (borderPoints.size() > 1)
   {
@@ -69,7 +66,8 @@ std::vector<Point> Area::findConvexSet(std::vector<Point> points)
     maxPoint = points[0];
     for (int i = 0; i < points.size(); i++)
     {
-      if (calculatePosition(activePoint, maxPoint, points[i]) > 0)
+      int position = calculatePosition(activePoint, maxPoint, points[i]);
+      if (position < 0)
       {
         maxPoint = points[i];
       }
@@ -82,7 +80,7 @@ std::vector<Point> Area::findConvexSet(std::vector<Point> points)
   Point minPoint = points[0];
   activePoint = topRightPoint;
 
-  while (minPoint != bottomLeftPoint)
+  while (minPoint != bottomLeftPoint && points.size() != 0)
   {
     minPoint = points[0];
     for (int i = 0; i < points.size(); i++)

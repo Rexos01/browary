@@ -1,2 +1,2 @@
 all:
-	g++ -o shire main.cpp ./lib/*.cpp
+	g++ -g -o shire main.cpp ./lib/*.cpp
