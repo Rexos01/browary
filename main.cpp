@@ -27,16 +27,22 @@ int main(int argc, char *argv[])
             }
         }
     }
+
+    Graph newGraph = Graph(GraphReader::readToMatrix(argv[1]));
+    newGraph.UpdateMatrix(GraphReader::addSource(newGraph.GetMatrix(), argv[2], 'p', 'b'));
+
+    std::vector<int> p(newGraph.GetMatrix().size(), 0);
+
     for (int i = 0; i < fields.size(); i++)
     {
         if (fields[i].productivity != -1)
         {
-            // TODO
+            p[fields[i].vectorIndex] = fields[i].productivity;
         }
     }
 
-    Graph newGraph = Graph(GraphReader::readToMatrix(argv[1]));
-    newGraph.UpdateMatrix(GraphReader::addSource(newGraph.GetMatrix(), argv[2], 'p', 'b'));
+    // TODO
+
     newGraph.PrintGraph();
     int source = newGraph.GetMatrix().size() - 1;
     int dest = newGraph.GetMatrix().size() - 2;
