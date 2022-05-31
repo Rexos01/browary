@@ -1,15 +1,32 @@
 #include "graph.h"
 
+/**
+ * Graph constructor 
+ * @param _matrix the incidence matrix that represents the graph
+ */
+
 Graph::Graph(std::vector<std::vector<int>> _matrix)
 {
     matrix = _matrix;
 }
 
+/**
+ * Graph constructor 
+ * @param list the weighted neighbors list that represents the graph
+ */
 Graph::Graph(std::vector<std::tuple<int, int, int>> list)
 {
     neighborsList = list;
 }
 
+/**
+ * Looks through the graph for the shortest path
+ * @param graph incidence matrix of the target graph
+ * @param start index of the vertex from which we start
+ * @param finish index of the vertex to which we go
+ * @param path vector in which we write our road
+ * @return returns true if road exists, else returns false 
+ */
 bool Graph::BFS(std::vector<std::vector<int>> graph, int start, int finish, std::vector<int> &path)
 {
     std::vector<bool> visited = std::vector<bool>(graph.size());
@@ -43,6 +60,9 @@ bool Graph::BFS(std::vector<std::vector<int>> graph, int start, int finish, std:
     return false;
 }
 
+/**
+ * Prints the inciedence matrix of the graph
+ */
 void Graph::PrintGraph()
 {
     for (int i = 0; i < matrix.size(); i++)
@@ -55,24 +75,46 @@ void Graph::PrintGraph()
     }
 }
 
+/**
+ * Allow us to overwrite the existing matrix
+ * @param matrix new incidience matrix
+ */
 void Graph::UpdateMatrix(std::vector<std::vector<int>> matrix)
 {
     this->matrix = matrix;
 }
 
+/**
+ * Allow us to get private matrix
+ * @return matrix that represent the graph
+ */
 std::vector<std::vector<int>> Graph::GetMatrix()
 {
     return this->matrix;
 }
 
-void Graph::UpdateMatrixRow(std::vector<int> column, int index)
+/**
+ * Updates some certain row of the matrix
+ * @param row new vector containing the weighted edges
+ * @param index index of the vertex
+ */
+void Graph::UpdateMatrixRow(std::vector<int> row, int index)
 {
     for (int i = 0; i < matrix.size(); i++)
     {
-        matrix[index][i] = column[i];
+        matrix[index][i] = row[i];
     }
 }
 
+
+/**
+ * Calculates maxflow of the graph with Edmund-Carp alghorithm
+ * @param s source of the given graph
+ * @param f destinition of the flow
+ * @param output vector that contains value of the destinition can be used as a source weights in the second step
+ * @param residualOutput the whole residual graph after calculating max flow
+ * @return returns the value of the maxflow
+ */
 int Graph::MaxFlow(int s, int f, std::vector<int> &output, std::vector<std::vector<int>> &residualOutput)
 {
 

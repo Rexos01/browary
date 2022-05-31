@@ -1,5 +1,10 @@
 #include "graph_reader.h"
 
+/**
+ * Read data from file into matrix
+ * @param path  string path to the file
+ * @return returns the incidence matrix of the graph
+ */
 std::vector<std::vector<int>> GraphReader::readToMatrix(std::string path)
 {
     std::ifstream file(path);
@@ -24,6 +29,11 @@ std::vector<std::vector<int>> GraphReader::readToMatrix(std::string path)
     return matrix;
 }
 
+/**
+ * Read data from file into the neighborhood list
+ * @param path  string path to the file
+ * @return returns the neighborhood list representation of the graph
+ */
 std::vector<std::vector<int>> GraphReader::readToList(std::string path)
 {
     std::ifstream file(path); // obs. bledow ?
@@ -48,6 +58,7 @@ std::vector<std::vector<int>> GraphReader::readToList(std::string path)
     return neighboursList;
 }
 
+
 std::vector<std::tuple<int,int, int>> GraphReader::readAsWeightedList(std::string path)
 {
     std::ifstream stream(path);
@@ -64,6 +75,14 @@ std::vector<std::tuple<int,int, int>> GraphReader::readAsWeightedList(std::strin
     return weightedList;
 }
 
+/**
+ * Add verticies to the matrix and read data to it
+ * @param matrix inciedence matrix that should be updated
+ * @param path  string path to the file to read
+ * @param z symbol that marks the type of the source
+ * @param symbol that marks the type of the destinition
+ * @return returns the neighborhood list representation of the graph
+ */
 std::vector<std::vector<int>> GraphReader::addSource(std::vector<std::vector<int>> matrix, std::string path, char z, char u)
 {
     /*  file ex.
@@ -123,7 +142,7 @@ std::vector<Area> GraphReader::readAreas(std::string path)
             file >> x >> y;
             points.push_back(Point(x, y));
         }
-        areas[areaIndex] = Area(points, areaValue);
+        areas.push_back(Area(points, areaValue));
         points.clear();
         areaIndex++;
     }

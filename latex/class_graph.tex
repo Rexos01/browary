@@ -1,0 +1,149 @@
+\hypertarget{class_graph}{}\doxysection{Graph Class Reference}
+\label{class_graph}\index{Graph@{Graph}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graph_a5f81c94cb7fdb2b152c582db6b1afb12}{Graph}} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ incid\+Matrix)
+\item 
+\mbox{\hyperlink{class_graph_a4befaa780764890922c6206a781b70f9}{Graph}} (std\+::vector$<$ std\+::tuple$<$ int, int, int $>$$>$ list)
+\item 
+int \mbox{\hyperlink{class_graph_a6a268b6ab5ff823a1694609138b67e37}{Max\+Flow}} (int start, int end, std\+::vector$<$ int $>$ \&output, std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&output\+Residual)
+\item 
+\mbox{\Hypertarget{class_graph_ad112c0e249f2a31ca143304c705c01c8}\label{class_graph_ad112c0e249f2a31ca143304c705c01c8}} 
+bool {\bfseries BFS} (int start, int end, std\+::vector$<$ int $>$ \&path)
+\item 
+bool \mbox{\hyperlink{class_graph_a4f452e349e3afd5f9b65fb6bf827acdc}{BFS}} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ graph, int start, int finish, std\+::vector$<$ int $>$ \&path)
+\item 
+void \mbox{\hyperlink{class_graph_adb99f0478fd3f8fcc7ecc4efb95caf44}{Print\+Graph}} ()
+\item 
+\mbox{\Hypertarget{class_graph_a81b6be6646bc92ae84e189f3bff47e6e}\label{class_graph_a81b6be6646bc92ae84e189f3bff47e6e}} 
+void {\bfseries Print\+Edges} ()
+\item 
+void \mbox{\hyperlink{class_graph_a14152456fc44964f9dd029ba193f09ab}{Update\+Matrix}} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ matrix)
+\item 
+void \mbox{\hyperlink{class_graph_ad029370ef1e3d4928e9e165f9f7400a4}{Update\+Matrix\+Row}} (std\+::vector$<$ int $>$ column, int index)
+\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{class_graph_a2080d157b7a30f8b17856f50f31e701d}{Get\+Matrix}} ()
+\item 
+\mbox{\Hypertarget{class_graph_ab4ae66ff87bd1982adb63bac24c694b0}\label{class_graph_ab4ae66ff87bd1982adb63bac24c694b0}} 
+std\+::vector$<$ int $>$ {\bfseries Bellman\+Ford} (std\+::vector$<$ std\+::tuple$<$ int, int, int $>$$>$ neigboors\+List, int source)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_graph_aa4579be0e1f7c102bf0ed8513c4097e3}\label{class_graph_aa4579be0e1f7c102bf0ed8513c4097e3}} 
+std\+::vector$<$ std\+::tuple$<$ int, int, int $>$ $>$ {\bfseries neighbors\+List}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_graph_a5f81c94cb7fdb2b152c582db6b1afb12}\label{class_graph_a5f81c94cb7fdb2b152c582db6b1afb12}} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{\+\_\+matrix }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_graph}{Graph}} constructor 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+matrix} & the incidence matrix that represents the graph \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_a4befaa780764890922c6206a781b70f9}\label{class_graph_a4befaa780764890922c6206a781b70f9}} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::tuple$<$ int, int, int $>$$>$}]{list }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_graph}{Graph}} constructor 
+\begin{DoxyParams}{Parameters}
+{\em list} & the weighted neighbors list that represents the graph \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_a4f452e349e3afd5f9b65fb6bf827acdc}\label{class_graph_a4f452e349e3afd5f9b65fb6bf827acdc}} 
+\index{Graph@{Graph}!BFS@{BFS}}
+\index{BFS@{BFS}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{BFS()}{BFS()}}
+{\footnotesize\ttfamily bool Graph\+::\+BFS (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{graph,  }\item[{int}]{start,  }\item[{int}]{finish,  }\item[{std\+::vector$<$ int $>$ \&}]{path }\end{DoxyParamCaption})}
+
+Looks through the graph for the shortest path 
+\begin{DoxyParams}{Parameters}
+{\em graph} & incidence matrix of the target graph \\
+\hline
+{\em start} & index of the vertex from which we start \\
+\hline
+{\em finish} & index of the vertex to which we go \\
+\hline
+{\em path} & vector in which we write our road \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true if road exists, else returns false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_a2080d157b7a30f8b17856f50f31e701d}\label{class_graph_a2080d157b7a30f8b17856f50f31e701d}} 
+\index{Graph@{Graph}!GetMatrix@{GetMatrix}}
+\index{GetMatrix@{GetMatrix}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{GetMatrix()}{GetMatrix()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ int $>$ $>$ Graph\+::\+Get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Allow us to get private matrix \begin{DoxyReturn}{Returns}
+matrix that represent the graph 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_a6a268b6ab5ff823a1694609138b67e37}\label{class_graph_a6a268b6ab5ff823a1694609138b67e37}} 
+\index{Graph@{Graph}!MaxFlow@{MaxFlow}}
+\index{MaxFlow@{MaxFlow}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{MaxFlow()}{MaxFlow()}}
+{\footnotesize\ttfamily int Graph\+::\+Max\+Flow (\begin{DoxyParamCaption}\item[{int}]{s,  }\item[{int}]{f,  }\item[{std\+::vector$<$ int $>$ \&}]{output,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{residual\+Output }\end{DoxyParamCaption})}
+
+Calculates maxflow of the graph with Edmund-\/\+Carp alghorithm 
+\begin{DoxyParams}{Parameters}
+{\em s} & source of the given graph \\
+\hline
+{\em f} & destinition of the flow \\
+\hline
+{\em output} & vector that contains value of the destinition can be used as a source weights in the second step \\
+\hline
+{\em residual\+Output} & the whole residual graph after calculating max flow \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the value of the maxflow 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_adb99f0478fd3f8fcc7ecc4efb95caf44}\label{class_graph_adb99f0478fd3f8fcc7ecc4efb95caf44}} 
+\index{Graph@{Graph}!PrintGraph@{PrintGraph}}
+\index{PrintGraph@{PrintGraph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{PrintGraph()}{PrintGraph()}}
+{\footnotesize\ttfamily void Graph\+::\+Print\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Prints the inciedence matrix of the graph \mbox{\Hypertarget{class_graph_a14152456fc44964f9dd029ba193f09ab}\label{class_graph_a14152456fc44964f9dd029ba193f09ab}} 
+\index{Graph@{Graph}!UpdateMatrix@{UpdateMatrix}}
+\index{UpdateMatrix@{UpdateMatrix}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{UpdateMatrix()}{UpdateMatrix()}}
+{\footnotesize\ttfamily void Graph\+::\+Update\+Matrix (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{matrix }\end{DoxyParamCaption})}
+
+Allow us to overwrite the existing matrix 
+\begin{DoxyParams}{Parameters}
+{\em matrix} & new incidience matrix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_ad029370ef1e3d4928e9e165f9f7400a4}\label{class_graph_ad029370ef1e3d4928e9e165f9f7400a4}} 
+\index{Graph@{Graph}!UpdateMatrixRow@{UpdateMatrixRow}}
+\index{UpdateMatrixRow@{UpdateMatrixRow}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{UpdateMatrixRow()}{UpdateMatrixRow()}}
+{\footnotesize\ttfamily void Graph\+::\+Update\+Matrix\+Row (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{row,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+Updates some certain row of the matrix 
+\begin{DoxyParams}{Parameters}
+{\em row} & new vector containing the weighted edges \\
+\hline
+{\em index} & index of the vertex \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/graph.\+h\item 
+lib/graph.\+cpp\end{DoxyCompactItemize}
