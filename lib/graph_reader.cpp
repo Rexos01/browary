@@ -150,7 +150,8 @@ std::vector<Area> GraphReader::readAreas(std::string path)
     return areas;
 }
 
-std::vector<Field> GraphReader::readFieldsPosition(std::string path) {
+std::vector<Field> GraphReader::readFieldsPosition(std::string path)
+{
     std::ifstream file(path);
     std::vector<Field> fields;
 
