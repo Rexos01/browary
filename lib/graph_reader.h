@@ -9,8 +9,8 @@
 #include <algorithm>
 #include <tuple>
 
-#include "lib/area.h"
-#include "lib/field.h"
+#include "area.h"
+#include "field.h"
 
 class GraphReader
 {

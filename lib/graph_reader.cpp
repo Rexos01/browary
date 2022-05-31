@@ -114,7 +114,6 @@ std::vector<Area> GraphReader::readAreas(std::string path)
     int x, y;
 
     areaIndex = 0;
-    std::vector<std::vector<Point>> points;
 
     while (!file.eof())
     {
