@@ -123,7 +123,7 @@ std::vector<Area> GraphReader::readAreas(std::string path)
             file >> x >> y;
             points.push_back(Point(x, y));
         }
-        areas[areaIndex] = Area(points, areaValue);
+        areas.push_back(Area(points, areaValue));
         points.clear();
         areaIndex++;
     }
@@ -131,7 +131,8 @@ std::vector<Area> GraphReader::readAreas(std::string path)
     return areas;
 }
 
-std::vector<Field> GraphReader::readFieldsPosition(std::string path) {
+std::vector<Field> GraphReader::readFieldsPosition(std::string path)
+{
     std::ifstream file(path);
     std::vector<Field> fields;
 
