@@ -13,8 +13,8 @@ void PrintVector(std::vector<int> vector)
 
 int main(int argc, char *argv[])
 {
-    std::vector<Area> areas = GraphReader::readAreas(".\\conf\\areas-default.txt");
-    std::vector<Field> fields = GraphReader::readFieldsPosition(".\\conf\\fields-position-default.txt");
+    std::vector<Area> areas = GraphReader::readAreas(argv[4]);
+    std::vector<Field> fields = GraphReader::readFieldsPosition(argv[5]);
 
     for (int i = 0; i < fields.size(); i++)
     {
@@ -28,8 +28,8 @@ int main(int argc, char *argv[])
         }
     }
 
-    Graph newGraph = Graph(GraphReader::readToMatrix(".\\conf\\stage-1-second.txt"));
-    newGraph.UpdateMatrix(GraphReader::addSource(newGraph.GetMatrix(), ".\\conf\\sources-second.txt", 'p', 'b'));
+    Graph newGraph = Graph(GraphReader::readToMatrix(argv[1]));
+    newGraph.UpdateMatrix(GraphReader::addSource(newGraph.GetMatrix(), argv[2], 'p', 'b'));
     int source = newGraph.GetMatrix().size() - 1;
     int dest = newGraph.GetMatrix().size() - 2;
     std::vector<int> p(newGraph.GetMatrix().size(), 0);
@@ -48,8 +48,8 @@ int main(int argc, char *argv[])
     std::vector<int> browarsOutput;
     std::vector<std::vector<int>> residualGraph;
     std::cout << "Max flow from fields to breweries: " << newGraph.MaxFlow(source, dest, browarsOutput, residualGraph);
-    newGraph.UpdateMatrix(GraphReader::readToMatrix(".\\conf\\stage-2-second.txt"));
-    newGraph.UpdateMatrix(GraphReader::addSource(newGraph.GetMatrix(), ".\\conf\\sources-second.txt", 'b', 't'));
+    newGraph.UpdateMatrix(GraphReader::readToMatrix(argv[3]));
+    newGraph.UpdateMatrix(GraphReader::addSource(newGraph.GetMatrix(), argv[2], 'b', 't'));
     newGraph.UpdateMatrixRow(browarsOutput, source);
     newGraph.PrintGraph();
     std::cout << std::endl;

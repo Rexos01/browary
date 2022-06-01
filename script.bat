@@ -1,0 +1,1 @@
+shire conf\\stage-1-second.txt conf\\sources-second.txt conf\\stage-2-second.txt conf\\areas-default.txt conf\\fields-position-default.txt
