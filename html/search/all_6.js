@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['point_9',['Point',['../struct_point.html',1,'']]],
-  ['printgraph_10',['PrintGraph',['../class_graph.html#adb99f0478fd3f8fcc7ecc4efb95caf44',1,'Graph']]]
+  ['maxflow_12',['MaxFlow',['../class_graph.html#a6a268b6ab5ff823a1694609138b67e37',1,'Graph']]]
 ];

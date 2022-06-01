@@ -1,39 +1,86 @@
 \hypertarget{class_area}{}\doxysection{Area Class Reference}
 \label{class_area}\index{Area@{Area}}
+
+
+{\ttfamily \#include $<$area.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_area_ae2a61d592d9ee4d8d86e578910f8050c}\label{class_area_ae2a61d592d9ee4d8d86e578910f8050c}} 
-{\bfseries Area} (std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ \+\_\+border\+Points, int \+\_\+area\+Value)
+\mbox{\hyperlink{class_area_ae2a61d592d9ee4d8d86e578910f8050c}{Area}} (std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ \+\_\+border\+Points, int \+\_\+area\+Value)
 \item 
-\mbox{\Hypertarget{class_area_a2d80442fa816f86cb6d4dc2d1c7594fd}\label{class_area_a2d80442fa816f86cb6d4dc2d1c7594fd}} 
-bool {\bfseries is\+In\+The\+Area} (\mbox{\hyperlink{struct_point}{Point}} point)
+bool \mbox{\hyperlink{class_area_a2d80442fa816f86cb6d4dc2d1c7594fd}{is\+In\+The\+Area}} (\mbox{\hyperlink{struct_point}{Point}} point)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_area_ad055150234e723d2312418c7f12079f0}\label{class_area_ad055150234e723d2312418c7f12079f0}} 
-std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ {\bfseries border\+Points}
+std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ \mbox{\hyperlink{class_area_ad055150234e723d2312418c7f12079f0}{border\+Points}}
 \item 
-\mbox{\Hypertarget{class_area_af5177c219c9ef3724f01d3ddef779994}\label{class_area_af5177c219c9ef3724f01d3ddef779994}} 
-std\+::vector$<$ \mbox{\hyperlink{struct_segment}{Segment}} $>$ {\bfseries segments}
+std\+::vector$<$ \mbox{\hyperlink{struct_segment}{Segment}} $>$ \mbox{\hyperlink{class_area_af5177c219c9ef3724f01d3ddef779994}{segments}}
 \item 
-\mbox{\Hypertarget{class_area_a7944f12e0a30eabdac4648d991cdd8dc}\label{class_area_a7944f12e0a30eabdac4648d991cdd8dc}} 
-int {\bfseries area\+Value}
-\item 
-\mbox{\Hypertarget{class_area_a7e508a4a653e21bd4e3154c9d6502262}\label{class_area_a7e508a4a653e21bd4e3154c9d6502262}} 
-int {\bfseries minY}
-\item 
-\mbox{\Hypertarget{class_area_afb5dfa40b27a20f97eddfa78214858a4}\label{class_area_afb5dfa40b27a20f97eddfa78214858a4}} 
-int {\bfseries minX}
-\item 
-\mbox{\Hypertarget{class_area_a62912fa796652dc7b7fbb71578b47d4b}\label{class_area_a62912fa796652dc7b7fbb71578b47d4b}} 
-int {\bfseries maxY}
+int \mbox{\hyperlink{class_area_a7944f12e0a30eabdac4648d991cdd8dc}{area\+Value}}
 \item 
 \mbox{\Hypertarget{class_area_a4f395f8867835c1ec54e76b0bc2c0e3d}\label{class_area_a4f395f8867835c1ec54e76b0bc2c0e3d}} 
 int {\bfseries maxX}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Klasa obszaru 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_area_ae2a61d592d9ee4d8d86e578910f8050c}\label{class_area_ae2a61d592d9ee4d8d86e578910f8050c}} 
+\index{Area@{Area}!Area@{Area}}
+\index{Area@{Area}!Area@{Area}}
+\doxysubsubsection{\texorpdfstring{Area()}{Area()}}
+{\footnotesize\ttfamily Area\+::\+Area (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$}]{\+\_\+border\+Points,  }\item[{int}]{\+\_\+area\+Value }\end{DoxyParamCaption})}
+
+Konstruktor klasy obszaru 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+border\+Points} & punkty graniczne obszaru \\
+\hline
+{\em \+\_\+area\+Value} & wartość wydajności pól na obszarze \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_area_a2d80442fa816f86cb6d4dc2d1c7594fd}\label{class_area_a2d80442fa816f86cb6d4dc2d1c7594fd}} 
+\index{Area@{Area}!isInTheArea@{isInTheArea}}
+\index{isInTheArea@{isInTheArea}!Area@{Area}}
+\doxysubsubsection{\texorpdfstring{isInTheArea()}{isInTheArea()}}
+{\footnotesize\ttfamily bool Area\+::is\+In\+The\+Area (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{point }\end{DoxyParamCaption})}
+
+Sprawdza, czy punkt znajduje się w danym obszarze 
+\begin{DoxyParams}{Parameters}
+{\em point} & dane punktu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, w przypadku poprawnego wprawdzenia, false w p. w. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_area_a7944f12e0a30eabdac4648d991cdd8dc}\label{class_area_a7944f12e0a30eabdac4648d991cdd8dc}} 
+\index{Area@{Area}!areaValue@{areaValue}}
+\index{areaValue@{areaValue}!Area@{Area}}
+\doxysubsubsection{\texorpdfstring{areaValue}{areaValue}}
+{\footnotesize\ttfamily int Area\+::area\+Value}
+
+Wydajność pól uprawnych na obszarze \mbox{\Hypertarget{class_area_ad055150234e723d2312418c7f12079f0}\label{class_area_ad055150234e723d2312418c7f12079f0}} 
+\index{Area@{Area}!borderPoints@{borderPoints}}
+\index{borderPoints@{borderPoints}!Area@{Area}}
+\doxysubsubsection{\texorpdfstring{borderPoints}{borderPoints}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_point}{Point}}$>$ Area\+::border\+Points}
+
+Punkty graniczne obszaru \mbox{\Hypertarget{class_area_af5177c219c9ef3724f01d3ddef779994}\label{class_area_af5177c219c9ef3724f01d3ddef779994}} 
+\index{Area@{Area}!segments@{segments}}
+\index{segments@{segments}!Area@{Area}}
+\doxysubsubsection{\texorpdfstring{segments}{segments}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_segment}{Segment}}$>$ Area\+::segments}
+
+Granice obszaru (odcinki) 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

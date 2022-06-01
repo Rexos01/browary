@@ -76,32 +76,36 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;point.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;segment.h&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_area.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_area.html">Area</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="class_area.html">Area</a>(std::vector&lt;Point&gt; _borderPoints, <span class="keywordtype">int</span> _areaValue);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  std::vector&lt;Point&gt; borderPoints;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  std::vector&lt;Segment&gt; segments;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">int</span> areaValue;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">int</span> minY;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">int</span> minX;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">int</span> maxY;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">int</span> maxX;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">bool</span> isInTheArea(<a class="code" href="struct_point.html">Point</a> point);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="class_area.html">Area</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  std::vector&lt;Point&gt; findConvexSet(std::vector&lt;Point&gt; points);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">int</span> calculatePosition(<a class="code" href="struct_point.html">Point</a> a, <a class="code" href="struct_point.html">Point</a> b, <a class="code" href="struct_point.html">Point</a> c);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_area.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_area.html">Area</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="class_area.html">Area</a>(std::vector&lt;Point&gt; _borderPoints, <span class="keywordtype">int</span> _areaValue);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_area.html#ad055150234e723d2312418c7f12079f0">   24</a></span>&#160;  std::vector&lt;Point&gt; <a class="code" href="class_area.html#ad055150234e723d2312418c7f12079f0">borderPoints</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_area.html#af5177c219c9ef3724f01d3ddef779994">   29</a></span>&#160;  std::vector&lt;Segment&gt; <a class="code" href="class_area.html#af5177c219c9ef3724f01d3ddef779994">segments</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_area_html"><div class="ttname"><a href="class_area.html">Area</a></div><div class="ttdef"><b>Definition:</b> area.h:9</div></div>
-<div class="ttc" id="astruct_point_html"><div class="ttname"><a href="struct_point.html">Point</a></div><div class="ttdef"><b>Definition:</b> point.h:5</div></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_area.html#a7944f12e0a30eabdac4648d991cdd8dc">   34</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_area.html#a7944f12e0a30eabdac4648d991cdd8dc">areaValue</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">int</span> maxX;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_area.html#a2d80442fa816f86cb6d4dc2d1c7594fd">isInTheArea</a>(<a class="code" href="struct_point.html">Point</a> point);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="class_area.html">Area</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  std::vector&lt;Point&gt; findConvexSet(std::vector&lt;Point&gt; points);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">int</span> calculatePosition(<a class="code" href="struct_point.html">Point</a> a, <a class="code" href="struct_point.html">Point</a> b, <a class="code" href="struct_point.html">Point</a> c);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_area_html"><div class="ttname"><a href="class_area.html">Area</a></div><div class="ttdef"><b>Definition:</b> area.h:12</div></div>
+<div class="ttc" id="aclass_area_html_a2d80442fa816f86cb6d4dc2d1c7594fd"><div class="ttname"><a href="class_area.html#a2d80442fa816f86cb6d4dc2d1c7594fd">Area::isInTheArea</a></div><div class="ttdeci">bool isInTheArea(Point point)</div><div class="ttdef"><b>Definition:</b> area.cpp:38</div></div>
+<div class="ttc" id="aclass_area_html_a7944f12e0a30eabdac4648d991cdd8dc"><div class="ttname"><a href="class_area.html#a7944f12e0a30eabdac4648d991cdd8dc">Area::areaValue</a></div><div class="ttdeci">int areaValue</div><div class="ttdef"><b>Definition:</b> area.h:34</div></div>
+<div class="ttc" id="aclass_area_html_ad055150234e723d2312418c7f12079f0"><div class="ttname"><a href="class_area.html#ad055150234e723d2312418c7f12079f0">Area::borderPoints</a></div><div class="ttdeci">std::vector&lt; Point &gt; borderPoints</div><div class="ttdef"><b>Definition:</b> area.h:24</div></div>
+<div class="ttc" id="aclass_area_html_af5177c219c9ef3724f01d3ddef779994"><div class="ttname"><a href="class_area.html#af5177c219c9ef3724f01d3ddef779994">Area::segments</a></div><div class="ttdeci">std::vector&lt; Segment &gt; segments</div><div class="ttdef"><b>Definition:</b> area.h:29</div></div>
+<div class="ttc" id="astruct_point_html"><div class="ttname"><a href="struct_point.html">Point</a></div><div class="ttdef"><b>Definition:</b> point.h:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

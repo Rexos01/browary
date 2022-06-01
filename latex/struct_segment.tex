@@ -1,24 +1,75 @@
 \hypertarget{struct_segment}{}\doxysection{Segment Struct Reference}
 \label{struct_segment}\index{Segment@{Segment}}
+
+
+{\ttfamily \#include $<$segment.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct_segment_aa2733c0e915ccde866dc859913e46378}\label{struct_segment_aa2733c0e915ccde866dc859913e46378}} 
-{\bfseries Segment} (\mbox{\hyperlink{struct_point}{Point}} \+\_\+p1, \mbox{\hyperlink{struct_point}{Point}} \+\_\+p2)
+\mbox{\hyperlink{struct_segment_aa2733c0e915ccde866dc859913e46378}{Segment}} (\mbox{\hyperlink{struct_point}{Point}} \+\_\+p1, \mbox{\hyperlink{struct_point}{Point}} \+\_\+p2)
 \item 
-\mbox{\Hypertarget{struct_segment_ac2ea54e9fb289614f173b1093544cbe8}\label{struct_segment_ac2ea54e9fb289614f173b1093544cbe8}} 
-bool {\bfseries intersects} (\mbox{\hyperlink{struct_segment}{Segment}} s)
+bool \mbox{\hyperlink{struct_segment_ac2ea54e9fb289614f173b1093544cbe8}{intersects}} (\mbox{\hyperlink{struct_segment}{Segment}} s)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct_segment_a66dff1645946cc87157a0cbd6d8b23f3}\label{struct_segment_a66dff1645946cc87157a0cbd6d8b23f3}} 
-\mbox{\hyperlink{struct_point}{Point}} {\bfseries p1}
+\mbox{\hyperlink{struct_point}{Point}} \mbox{\hyperlink{struct_segment_a66dff1645946cc87157a0cbd6d8b23f3}{p1}}
 \item 
-\mbox{\Hypertarget{struct_segment_a9c1f3b8369daf27f3b809cc048f1354f}\label{struct_segment_a9c1f3b8369daf27f3b809cc048f1354f}} 
-\mbox{\hyperlink{struct_point}{Point}} {\bfseries p2}
+\mbox{\hyperlink{struct_point}{Point}} \mbox{\hyperlink{struct_segment_a9c1f3b8369daf27f3b809cc048f1354f}{p2}}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Klasa reprezentująca odcinek 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_segment_aa2733c0e915ccde866dc859913e46378}\label{struct_segment_aa2733c0e915ccde866dc859913e46378}} 
+\index{Segment@{Segment}!Segment@{Segment}}
+\index{Segment@{Segment}!Segment@{Segment}}
+\doxysubsubsection{\texorpdfstring{Segment()}{Segment()}}
+{\footnotesize\ttfamily Segment\+::\+Segment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{\+\_\+p1,  }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{\+\_\+p2 }\end{DoxyParamCaption})}
+
+Konstruktor klasy odcinka składającego się z dwóch punktów 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+p1} & punkt początkowy \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+{\em \+\_\+p2} & punkt końcowy \mbox{\hyperlink{struct_point}{Point}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_segment_ac2ea54e9fb289614f173b1093544cbe8}\label{struct_segment_ac2ea54e9fb289614f173b1093544cbe8}} 
+\index{Segment@{Segment}!intersects@{intersects}}
+\index{intersects@{intersects}!Segment@{Segment}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}}
+{\footnotesize\ttfamily bool Segment\+::intersects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_segment}{Segment}}}]{s }\end{DoxyParamCaption})}
+
+Sprawdza, czy dwa odcinki się przecinają 
+\begin{DoxyParams}{Parameters}
+{\em s} & odcinek do sprawdzenia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, jeśli odcinki się przecinają, false w p. w. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_segment_a66dff1645946cc87157a0cbd6d8b23f3}\label{struct_segment_a66dff1645946cc87157a0cbd6d8b23f3}} 
+\index{Segment@{Segment}!p1@{p1}}
+\index{p1@{p1}!Segment@{Segment}}
+\doxysubsubsection{\texorpdfstring{p1}{p1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_point}{Point}} Segment\+::p1}
+
+Punkt początkowy \mbox{\Hypertarget{struct_segment_a9c1f3b8369daf27f3b809cc048f1354f}\label{struct_segment_a9c1f3b8369daf27f3b809cc048f1354f}} 
+\index{Segment@{Segment}!p2@{p2}}
+\index{p2@{p2}!Segment@{Segment}}
+\doxysubsubsection{\texorpdfstring{p2}{p2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_point}{Point}} Segment\+::p2}
+
+Punkt końcowy 
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

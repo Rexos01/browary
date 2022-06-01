@@ -120,9 +120,9 @@ std::vector&lt; std::tuple&lt; int, int, int &gt; &gt;&#160;</td><td class="memI
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="class_graph.html">Graph</a> constructor </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Konstruktor klasy graf </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">_matrix</td><td>the incidence matrix that represents the graph </td></tr>
+    <tr><td class="paramname">_matrix</td><td>macierz incydencji reprezentujacej graf </td></tr>
   </table>
   </dd>
 </dl>
@@ -144,9 +144,9 @@ std::vector&lt; std::tuple&lt; int, int, int &gt; &gt;&#160;</td><td class="memI
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="class_graph.html">Graph</a> constructor </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Konstruktor klasy graf </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>the weighted neighbors list that represents the graph </td></tr>
+    <tr><td class="paramname">list</td><td>ważona lista sasiedzstwa reprezentujaca graf </td></tr>
   </table>
   </dd>
 </dl>
@@ -191,16 +191,16 @@ std::vector&lt; std::tuple&lt; int, int, int &gt; &gt;&#160;</td><td class="memI
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Looks through the graph for the shortest path </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Wyszykiwanie najkrutszej sciezki w grafie </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">graph</td><td>incidence matrix of the target graph </td></tr>
-    <tr><td class="paramname">start</td><td>index of the vertex from which we start </td></tr>
-    <tr><td class="paramname">finish</td><td>index of the vertex to which we go </td></tr>
-    <tr><td class="paramname">path</td><td>vector in which we write our road </td></tr>
+    <tr><td class="paramname">graph</td><td>macierz incydencji danego grafu </td></tr>
+    <tr><td class="paramname">start</td><td>poczatkowy wierszolek </td></tr>
+    <tr><td class="paramname">finish</td><td>koncowy wierszolek </td></tr>
+    <tr><td class="paramname">path</td><td>vektor przychowywajacy droge od start do finish </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>returns true if road exists, else returns false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>zwraza true jesli droga istneje, w przeciwnym wypadku zwraca false </dd></dl>
 
 </div>
 </div>
@@ -218,7 +218,7 @@ std::vector&lt; std::tuple&lt; int, int, int &gt; &gt;&#160;</td><td class="memI
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Allow us to get private matrix </p><dl class="section return"><dt>Returns</dt><dd>matrix that represent the graph </dd></dl>
+<p>Zwraca macierz incydencji na zewnatrz klasy </p><dl class="section return"><dt>Returns</dt><dd>macierz incydencji reprezentujaca graf </dd></dl>
 
 </div>
 </div>
@@ -259,16 +259,16 @@ std::vector&lt; std::tuple&lt; int, int, int &gt; &gt;&#160;</td><td class="memI
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Calculates maxflow of the graph with Edmund-Carp alghorithm </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Oblicza maksymalny przeplyw od punktu s do punktu f </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td>source of the given graph </td></tr>
-    <tr><td class="paramname">f</td><td>destinition of the flow </td></tr>
-    <tr><td class="paramname">output</td><td>vector that contains value of the destinition can be used as a source weights in the second step </td></tr>
-    <tr><td class="paramname">residualOutput</td><td>the whole residual graph after calculating max flow </td></tr>
+    <tr><td class="paramname">s</td><td>zrodlo grafu </td></tr>
+    <tr><td class="paramname">f</td><td>ujscie grafu </td></tr>
+    <tr><td class="paramname">output</td><td>wagi zrodla po obliczaniu przeplywu </td></tr>
+    <tr><td class="paramname">residualOutput</td><td>cala siec residualna </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>returns the value of the maxflow </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>zwraca wartosc maksymalnego przeplywu </dd></dl>
 
 </div>
 </div>
@@ -286,7 +286,7 @@ std::vector&lt; std::tuple&lt; int, int, int &gt; &gt;&#160;</td><td class="memI
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Prints the inciedence matrix of the graph </p>
+<p>Wypisuje zawartosc macierzy incydencji </p>
 
 </div>
 </div>
@@ -305,7 +305,7 @@ std::vector&lt; std::tuple&lt; int, int, int &gt; &gt;&#160;</td><td class="memI
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Allow us to overwrite the existing matrix </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Nadpisuje macierz incydencji nowa </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">matrix</td><td>new incidience matrix </td></tr>
   </table>
@@ -339,10 +339,10 @@ std::vector&lt; std::tuple&lt; int, int, int &gt; &gt;&#160;</td><td class="memI
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Updates some certain row of the matrix </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Zmienia wagi pewnego wierszholku w grafie </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">row</td><td>new vector containing the weighted edges </td></tr>
-    <tr><td class="paramname">index</td><td>index of the vertex </td></tr>
+    <tr><td class="paramname">row</td><td>nowy vector wag wierszholka </td></tr>
+    <tr><td class="paramname">index</td><td>index wierszholka </td></tr>
   </table>
   </dd>
 </dl>
