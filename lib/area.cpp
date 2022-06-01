@@ -37,9 +37,11 @@ Area::Area(std::vector<Point> _borderPoints, int _areaValue)
 
 bool Area::isInTheArea(Point point)
 {
+  // Wyznaczenie odcinka pomocniczego
   Segment examiningSegment = Segment(point, Point(maxX + 1, point.y));
   int crossedSegments = 0;
 
+  // Sprawdzenie przecinania się krawędzi wielokąta
   for (int i = 0; i < segments.size(); i++)
   {
     if (examiningSegment.intersects(segments[i]))
@@ -55,9 +57,11 @@ std::vector<Point> Area::findConvexSet(std::vector<Point> points)
 {
   std::vector<Point> convexPoints;
 
+  // Wyznaczenie punktów charakterystycznych
   Point bottomLeftPoint = getBottomLeftPoint(points);
   Point topRightPoint = getTopRightPoint(points);
 
+  // Droga "w górę", przeciwnie do ruchu wskazówek zegara
   Point activePoint = bottomLeftPoint;
   Point maxPoint = points[0];
 
@@ -77,6 +81,7 @@ std::vector<Point> Area::findConvexSet(std::vector<Point> points)
     convexPoints.push_back(maxPoint);
   }
 
+  // Droga "w dół", zgodnie z ruchem wskazówek zegara
   Point minPoint = points[0];
   activePoint = topRightPoint;
 
@@ -94,11 +99,6 @@ std::vector<Point> Area::findConvexSet(std::vector<Point> points)
     points.erase(find(points.begin(), points.end(), minPoint));
     convexPoints.push_back(minPoint);
   }
-  // points.erase(find(points.begin(), points.end(), highestRightPoint));
-  // convexPoints.push_back(highestRightPoint);
-
-  // points.erase(find(points.begin(), points.end(), lowestLeftPoint));
-  // convexPoints.push_back(lowestLeftPoint);
 
   return convexPoints;
 }
@@ -109,7 +109,7 @@ int Area::calculatePosition(Point a, Point b, Point c)
 }
 
 //
-// Utility functions
+// Funkcje pomocnicze
 //
 
 bool compareXMax(Point a, Point b)

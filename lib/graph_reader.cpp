@@ -123,6 +123,11 @@ std::vector<std::vector<int>> GraphReader::addSource(std::vector<std::vector<int
     return matrix;
 }
 
+/**
+ * Na podstawie danych z pliku podanego w parametrze tworzy vector obszarów typu Area
+ * @param path ścieżka do pliku z danymi o obszarach
+ * @return zbiór dostępnych obszarów
+ */
 std::vector<Area> GraphReader::readAreas(std::string path)
 {
     std::ifstream file(path);
@@ -150,6 +155,11 @@ std::vector<Area> GraphReader::readAreas(std::string path)
     return areas;
 }
 
+/**
+ * Na podstawie danych z pliku podanego w parametrze tworzy zbiór pól uprawnych wraz z ich położeniem
+ * @param path ścieżka do pliku z danymi o polach uprawnych
+ * @return zbiór przetworzonych pól
+ */
 std::vector<Field> GraphReader::readFieldsPosition(std::string path)
 {
     std::ifstream file(path);
