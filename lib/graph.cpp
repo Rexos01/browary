@@ -125,6 +125,12 @@ int Graph::MaxFlow(int s, int f, std::vector<int> &output, std::vector<std::vect
     int maxFlow = 0;
     while (Graph::BFS(residualGraph, s, f, path))
     {
+        for (v = f; v != s; v = path[v])
+        {
+            std::cout << path[v] << " ";
+        }
+        std::cout << std::endl;
+
         int pathFlow = INT_MAX;
         for (v = f; v != s; v = path[v])
         {

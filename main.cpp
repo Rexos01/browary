@@ -42,19 +42,22 @@ int main(int argc, char *argv[])
         }
     }
 
-    // TODO
     newGraph.UpdateMatrixRow(p, source);
 
     std::vector<int> browarsOutput;
     std::vector<std::vector<int>> residualGraph;
-    std::cout << "Max flow from fields to breweries: " << newGraph.MaxFlow(source, dest, browarsOutput, residualGraph);
+    int maxFlow = newGraph.MaxFlow(source, dest, browarsOutput, residualGraph);
+
+    std::cout << "Max flow from fields to breweries: " << maxFlow << std::endl;
     newGraph.UpdateMatrix(GraphReader::readToMatrix(argv[3]));
     newGraph.UpdateMatrix(GraphReader::addSource(newGraph.GetMatrix(), argv[2], 'b', 't'));
     newGraph.UpdateMatrixRow(browarsOutput, source);
+
+    std::cout << std::endl << "Capacity matrix:";
     newGraph.PrintGraph();
     std::cout << std::endl;
 
-    std::cout << std::endl;
-    std::cout << "Max flow from brewieries to taverns: " << newGraph.MaxFlow(source, dest, browarsOutput, residualGraph);
+    maxFlow = newGraph.MaxFlow(source, dest, browarsOutput, residualGraph);
+    std::cout << "Max flow from brewieries to taverns: " << maxFlow;
     return 0;
 }

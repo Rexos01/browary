@@ -33,6 +33,7 @@ $ shire <dane_grafu_etap_1> <dane_wydajności> <dane_grafu_etap_2> <punkty_grani
 ```
 
 Wraz z następującymi parametrami:
+
 - `dane_grafu_etap_1` - ścieżka do pliku zawierającego dane grafu dla etapu 1,
 - `dane_wydajności` - ścieżka do pliku zawierającego dane o wydajności pól uprawnych, browarów i karczm
 - `dane_grafu_etap_2` - ścieżka do pliku zawierającego dane grafu dla etapu 2,
@@ -65,6 +66,7 @@ Dane o wydajności poszczególnych elementów infrastruktury należy przedstawi�
 ```
 
 Pierwsza kolumna wiersza powinna zawierać informacje o typie, odpowiednio:
+
 - p - dla pól uprawnych,
 - b - dla browarów,
 - t - dla tawern / karczm.
@@ -95,5 +97,7 @@ Plik powinien zawierać współrzędne pól uprawnych użytych w algorytmie wraz
 
 - `/conf` - katalog zawierający pliki danych wejściowych
 - `/lib` - katalog zawierający pliki źródłowe projektu (`*.h` oraz `*.cpp`)
+- `/docs` - katalog zawierający dokumentację w postaci `html` oraz `latex`
 - `main.cpp` - plik główny z funkcją `main()`
 - `Makefile` - plik zawierający instrukcje budowania
+
