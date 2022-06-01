@@ -1,8 +1,8 @@
 #include "graph.h"
 
 /**
- * Graph constructor 
- * @param _matrix the incidence matrix that represents the graph
+ * Konstruktor klasy graf
+ * @param _matrix macierz incydencji reprezentujacej graf
  */
 
 Graph::Graph(std::vector<std::vector<int>> _matrix)
@@ -11,8 +11,8 @@ Graph::Graph(std::vector<std::vector<int>> _matrix)
 }
 
 /**
- * Graph constructor 
- * @param list the weighted neighbors list that represents the graph
+ *Konstruktor klasy graf
+ * @param list ważona lista sasiedzstwa reprezentujaca graf
  */
 Graph::Graph(std::vector<std::tuple<int, int, int>> list)
 {
@@ -20,12 +20,12 @@ Graph::Graph(std::vector<std::tuple<int, int, int>> list)
 }
 
 /**
- * Looks through the graph for the shortest path
- * @param graph incidence matrix of the target graph
- * @param start index of the vertex from which we start
- * @param finish index of the vertex to which we go
- * @param path vector in which we write our road
- * @return returns true if road exists, else returns false 
+ * Wyszykiwanie najkrutszej sciezki w grafie
+ * @param graph macierz incydencji danego grafu
+ * @param start poczatkowy wierszolek
+ * @param finish koncowy wierszolek
+ * @param path vektor przychowywajacy droge od start do finish
+ * @return zwraza true jesli droga istneje, w przeciwnym wypadku zwraca false
  */
 bool Graph::BFS(std::vector<std::vector<int>> graph, int start, int finish, std::vector<int> &path)
 {
@@ -61,10 +61,11 @@ bool Graph::BFS(std::vector<std::vector<int>> graph, int start, int finish, std:
 }
 
 /**
- * Prints the inciedence matrix of the graph
+ * Wypisuje zawartosc macierzy incydencji
  */
 void Graph::PrintGraph()
 {
+    std::cout << std::endl;
     for (int i = 0; i < matrix.size(); i++)
     {
         for (int j = 0; j < matrix.size(); j++)
@@ -76,7 +77,7 @@ void Graph::PrintGraph()
 }
 
 /**
- * Allow us to overwrite the existing matrix
+ * Nadpisuje macierz incydencji nowa
  * @param matrix new incidience matrix
  */
 void Graph::UpdateMatrix(std::vector<std::vector<int>> matrix)
@@ -85,8 +86,8 @@ void Graph::UpdateMatrix(std::vector<std::vector<int>> matrix)
 }
 
 /**
- * Allow us to get private matrix
- * @return matrix that represent the graph
+ * Zwraca macierz incydencji na zewnatrz klasy
+ * @return macierz incydencji reprezentujaca graf
  */
 std::vector<std::vector<int>> Graph::GetMatrix()
 {
@@ -94,9 +95,9 @@ std::vector<std::vector<int>> Graph::GetMatrix()
 }
 
 /**
- * Updates some certain row of the matrix
- * @param row new vector containing the weighted edges
- * @param index index of the vertex
+ * Zmienia wagi pewnego wierszholku w grafie
+ * @param row nowy vector wag wierszholka
+ * @param index index wierszholka
  */
 void Graph::UpdateMatrixRow(std::vector<int> row, int index)
 {
@@ -106,14 +107,13 @@ void Graph::UpdateMatrixRow(std::vector<int> row, int index)
     }
 }
 
-
 /**
- * Calculates maxflow of the graph with Edmund-Carp alghorithm
- * @param s source of the given graph
- * @param f destinition of the flow
- * @param output vector that contains value of the destinition can be used as a source weights in the second step
- * @param residualOutput the whole residual graph after calculating max flow
- * @return returns the value of the maxflow
+ * Oblicza maksymalny przeplyw od punktu s do punktu f
+ * @param s zrodlo grafu
+ * @param f ujscie grafu
+ * @param output wagi zrodla po obliczaniu przeplywu
+ * @param residualOutput cala siec residualna
+ * @return zwraca wartosc maksymalnego przeplywu
  */
 int Graph::MaxFlow(int s, int f, std::vector<int> &output, std::vector<std::vector<int>> &residualOutput)
 {

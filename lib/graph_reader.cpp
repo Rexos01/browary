@@ -1,9 +1,9 @@
 #include "graph_reader.h"
 
 /**
- * Read data from file into matrix
- * @param path  string path to the file
- * @return returns the incidence matrix of the graph
+ * Wczytuje dane do macierzy incydencji
+ * @param path  sciezka do pliku z danymi
+ * @return zwraca macierz incydencji z danymi
  */
 std::vector<std::vector<int>> GraphReader::readToMatrix(std::string path)
 {
@@ -30,9 +30,9 @@ std::vector<std::vector<int>> GraphReader::readToMatrix(std::string path)
 }
 
 /**
- * Read data from file into the neighborhood list
- * @param path  string path to the file
- * @return returns the neighborhood list representation of the graph
+ * Wczytuje dane do list sasiedzstwa
+ * @param path  sciezka do pliku z danymi
+ * @return zwraca liste sasiedzstwa z danymi
  */
 std::vector<std::vector<int>> GraphReader::readToList(std::string path)
 {
@@ -76,12 +76,12 @@ std::vector<std::tuple<int,int, int>> GraphReader::readAsWeightedList(std::strin
 }
 
 /**
- * Add verticies to the matrix and read data to it
- * @param matrix inciedence matrix that should be updated
- * @param path  string path to the file to read
- * @param z symbol that marks the type of the source
- * @param symbol that marks the type of the destinition
- * @return returns the neighborhood list representation of the graph
+ * Dodaje wierszolki do macierzy incydencji
+ * @param matrix macierz ktora ma byc zupdatowana
+ * @param path  sciezka do pliku z danymi
+ * @param z symbol reprezentujacy zrodlo
+ * @param u symbol reprezentujacy ujscie
+ * @return zwraca zzupdatowana macierz incydencji
  */
 std::vector<std::vector<int>> GraphReader::addSource(std::vector<std::vector<int>> matrix, std::string path, char z, char u)
 {
