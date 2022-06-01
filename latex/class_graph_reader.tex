@@ -1,0 +1,77 @@
+\hypertarget{class_graph_reader}{}\doxysection{Graph\+Reader Class Reference}
+\label{class_graph_reader}\index{GraphReader@{GraphReader}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{class_graph_reader_a7b7eec53be8c80755fd17b798916c56e}{read\+To\+Matrix}} (std\+::string path)
+\item 
+static std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{class_graph_reader_a85b228e3266a4d9c5430de7a069a9642}{read\+To\+List}} (std\+::string path)
+\item 
+\mbox{\Hypertarget{class_graph_reader_a47ae21b1538706efdfda119ac06c1a61}\label{class_graph_reader_a47ae21b1538706efdfda119ac06c1a61}} 
+static std\+::vector$<$ std\+::tuple$<$ int, int, int $>$ $>$ {\bfseries read\+As\+Weighted\+List} (std\+::string path)
+\item 
+static std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{class_graph_reader_a70e8a2f88c6cbd51c264a87103c37d4d}{add\+Source}} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ matrix, std\+::string path, char z, char u)
+\item 
+\mbox{\Hypertarget{class_graph_reader_aa080253d87c09379daef6dfc4952cd45}\label{class_graph_reader_aa080253d87c09379daef6dfc4952cd45}} 
+static std\+::vector$<$ \mbox{\hyperlink{class_area}{Area}} $>$ {\bfseries read\+Areas} (std\+::string path)
+\item 
+\mbox{\Hypertarget{class_graph_reader_ac322cc2b621bf1fc11e0049ff299ea62}\label{class_graph_reader_ac322cc2b621bf1fc11e0049ff299ea62}} 
+static std\+::vector$<$ \mbox{\hyperlink{struct_field}{Field}} $>$ {\bfseries read\+Fields\+Position} (std\+::string path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_reader_a70e8a2f88c6cbd51c264a87103c37d4d}\label{class_graph_reader_a70e8a2f88c6cbd51c264a87103c37d4d}} 
+\index{GraphReader@{GraphReader}!addSource@{addSource}}
+\index{addSource@{addSource}!GraphReader@{GraphReader}}
+\doxysubsubsection{\texorpdfstring{addSource()}{addSource()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ int $>$ $>$ Graph\+Reader\+::add\+Source (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{matrix,  }\item[{std\+::string}]{path,  }\item[{char}]{z,  }\item[{char}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Add verticies to the matrix and read data to it 
+\begin{DoxyParams}{Parameters}
+{\em matrix} & inciedence matrix that should be updated \\
+\hline
+{\em path} & string path to the file to read \\
+\hline
+{\em z} & symbol that marks the type of the source \\
+\hline
+{\em symbol} & that marks the type of the destinition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the neighborhood list representation of the graph 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_reader_a85b228e3266a4d9c5430de7a069a9642}\label{class_graph_reader_a85b228e3266a4d9c5430de7a069a9642}} 
+\index{GraphReader@{GraphReader}!readToList@{readToList}}
+\index{readToList@{readToList}!GraphReader@{GraphReader}}
+\doxysubsubsection{\texorpdfstring{readToList()}{readToList()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ int $>$ $>$ Graph\+Reader\+::read\+To\+List (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Read data from file into the neighborhood list 
+\begin{DoxyParams}{Parameters}
+{\em path} & string path to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the neighborhood list representation of the graph 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_reader_a7b7eec53be8c80755fd17b798916c56e}\label{class_graph_reader_a7b7eec53be8c80755fd17b798916c56e}} 
+\index{GraphReader@{GraphReader}!readToMatrix@{readToMatrix}}
+\index{readToMatrix@{readToMatrix}!GraphReader@{GraphReader}}
+\doxysubsubsection{\texorpdfstring{readToMatrix()}{readToMatrix()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ int $>$ $>$ Graph\+Reader\+::read\+To\+Matrix (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Read data from file into matrix 
+\begin{DoxyParams}{Parameters}
+{\em path} & string path to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the incidence matrix of the graph 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/graph\+\_\+reader.\+h\item 
+lib/graph\+\_\+reader.\+cpp\end{DoxyCompactItemize}

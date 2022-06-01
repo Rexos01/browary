@@ -1,5 +1,10 @@
 #include "graph_reader.h"
 
+/**
+ * Wczytuje dane do macierzy incydencji
+ * @param path  sciezka do pliku z danymi
+ * @return zwraca macierz incydencji z danymi
+ */
 std::vector<std::vector<int>> GraphReader::readToMatrix(std::string path)
 {
     std::ifstream file(path);
@@ -24,6 +29,11 @@ std::vector<std::vector<int>> GraphReader::readToMatrix(std::string path)
     return matrix;
 }
 
+/**
+ * Wczytuje dane do list sasiedzstwa
+ * @param path  sciezka do pliku z danymi
+ * @return zwraca liste sasiedzstwa z danymi
+ */
 std::vector<std::vector<int>> GraphReader::readToList(std::string path)
 {
     std::ifstream file(path); // obs. bledow ?
@@ -48,6 +58,7 @@ std::vector<std::vector<int>> GraphReader::readToList(std::string path)
     return neighboursList;
 }
 
+
 std::vector<std::tuple<int,int, int>> GraphReader::readAsWeightedList(std::string path)
 {
     std::ifstream stream(path);
@@ -64,6 +75,14 @@ std::vector<std::tuple<int,int, int>> GraphReader::readAsWeightedList(std::strin
     return weightedList;
 }
 
+/**
+ * Dodaje wierszolki do macierzy incydencji
+ * @param matrix macierz ktora ma byc zupdatowana
+ * @param path  sciezka do pliku z danymi
+ * @param z symbol reprezentujacy zrodlo
+ * @param u symbol reprezentujacy ujscie
+ * @return zwraca zzupdatowana macierz incydencji
+ */
 std::vector<std::vector<int>> GraphReader::addSource(std::vector<std::vector<int>> matrix, std::string path, char z, char u)
 {
     /*  file ex.
