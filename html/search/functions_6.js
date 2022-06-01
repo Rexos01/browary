@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['updatematrix_30',['UpdateMatrix',['../class_graph.html#a14152456fc44964f9dd029ba193f09ab',1,'Graph']]],
-  ['updatematrixrow_31',['UpdateMatrixRow',['../class_graph.html#ad029370ef1e3d4928e9e165f9f7400a4',1,'Graph']]]
+  ['point_45',['Point',['../struct_point.html#acf2d96a374f9b7c9c636ba1a2ad42f02',1,'Point']]],
+  ['printgraph_46',['PrintGraph',['../class_graph.html#adb99f0478fd3f8fcc7ecc4efb95caf44',1,'Graph']]]
 ];

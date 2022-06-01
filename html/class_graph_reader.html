@@ -80,11 +80,9 @@ static std::vector&lt; std::tuple&lt; int, int, int &gt; &gt;&#160;</td><td clas
 <tr class="separator:a47ae21b1538706efdfda119ac06c1a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70e8a2f88c6cbd51c264a87103c37d4d"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph_reader.html#a70e8a2f88c6cbd51c264a87103c37d4d">addSource</a> (std::vector&lt; std::vector&lt; int &gt;&gt; matrix, std::string path, char z, char u)</td></tr>
 <tr class="separator:a70e8a2f88c6cbd51c264a87103c37d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa080253d87c09379daef6dfc4952cd45"><td class="memItemLeft" align="right" valign="top"><a id="aa080253d87c09379daef6dfc4952cd45"></a>
-static std::vector&lt; <a class="el" href="class_area.html">Area</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>readAreas</b> (std::string path)</td></tr>
+<tr class="memitem:aa080253d87c09379daef6dfc4952cd45"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_area.html">Area</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph_reader.html#aa080253d87c09379daef6dfc4952cd45">readAreas</a> (std::string path)</td></tr>
 <tr class="separator:aa080253d87c09379daef6dfc4952cd45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac322cc2b621bf1fc11e0049ff299ea62"><td class="memItemLeft" align="right" valign="top"><a id="ac322cc2b621bf1fc11e0049ff299ea62"></a>
-static std::vector&lt; <a class="el" href="struct_field.html">Field</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>readFieldsPosition</b> (std::string path)</td></tr>
+<tr class="memitem:ac322cc2b621bf1fc11e0049ff299ea62"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="struct_field.html">Field</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph_reader.html#ac322cc2b621bf1fc11e0049ff299ea62">readFieldsPosition</a> (std::string path)</td></tr>
 <tr class="separator:ac322cc2b621bf1fc11e0049ff299ea62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -133,16 +131,82 @@ static std::vector&lt; <a class="el" href="struct_field.html">Field</a> &gt;&#16
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Add verticies to the matrix and read data to it </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Dodaje wierszolki do macierzy incydencji </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">matrix</td><td>inciedence matrix that should be updated </td></tr>
-    <tr><td class="paramname">path</td><td>string path to the file to read </td></tr>
-    <tr><td class="paramname">z</td><td>symbol that marks the type of the source </td></tr>
-    <tr><td class="paramname">symbol</td><td>that marks the type of the destinition </td></tr>
+    <tr><td class="paramname">matrix</td><td>macierz ktora ma byc zupdatowana </td></tr>
+    <tr><td class="paramname">path</td><td>sciezka do pliku z danymi </td></tr>
+    <tr><td class="paramname">z</td><td>symbol reprezentujacy zrodlo </td></tr>
+    <tr><td class="paramname">u</td><td>symbol reprezentujacy ujscie </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>returns the neighborhood list representation of the graph </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>zwraca zzupdatowana macierz incydencji </dd></dl>
+
+</div>
+</div>
+<a id="aa080253d87c09379daef6dfc4952cd45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa080253d87c09379daef6dfc4952cd45">&#9670;&nbsp;</a></span>readAreas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_area.html">Area</a> &gt; GraphReader::readAreas </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Na podstawie danych z pliku podanego w parametrze tworzy vector obszarów typu <a class="el" href="class_area.html">Area</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>ścieżka do pliku z danymi o obszarach </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>zbiór dostępnych obszarów </dd></dl>
+
+</div>
+</div>
+<a id="ac322cc2b621bf1fc11e0049ff299ea62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac322cc2b621bf1fc11e0049ff299ea62">&#9670;&nbsp;</a></span>readFieldsPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="struct_field.html">Field</a> &gt; GraphReader::readFieldsPosition </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Na podstawie danych z pliku podanego w parametrze tworzy zbiór pól uprawnych wraz z ich położeniem </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>ścieżka do pliku z danymi o polach uprawnych </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>zbiór przetworzonych pól </dd></dl>
 
 </div>
 </div>
@@ -169,13 +233,13 @@ static std::vector&lt; <a class="el" href="struct_field.html">Field</a> &gt;&#16
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Read data from file into the neighborhood list </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Wczytuje dane do list sasiedzstwa </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>string path to the file </td></tr>
+    <tr><td class="paramname">path</td><td>sciezka do pliku z danymi </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>returns the neighborhood list representation of the graph </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>zwraca liste sasiedzstwa z danymi </dd></dl>
 
 </div>
 </div>
@@ -202,13 +266,13 @@ static std::vector&lt; <a class="el" href="struct_field.html">Field</a> &gt;&#16
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Read data from file into matrix </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Wczytuje dane do macierzy incydencji </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>string path to the file </td></tr>
+    <tr><td class="paramname">path</td><td>sciezka do pliku z danymi </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>returns the incidence matrix of the graph </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>zwraca macierz incydencji z danymi </dd></dl>
 
 </div>
 </div>

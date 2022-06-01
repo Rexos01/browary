@@ -43,9 +43,9 @@ std\+::vector$<$ std\+::tuple$<$ int, int, int $>$ $>$ {\bfseries neighbors\+Lis
 \doxysubsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{\+\_\+matrix }\end{DoxyParamCaption})}
 
-\mbox{\hyperlink{class_graph}{Graph}} constructor 
+Konstruktor klasy graf 
 \begin{DoxyParams}{Parameters}
-{\em \+\_\+matrix} & the incidence matrix that represents the graph \\
+{\em \+\_\+matrix} & macierz incydencji reprezentujacej graf \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_graph_a4befaa780764890922c6206a781b70f9}\label{class_graph_a4befaa780764890922c6206a781b70f9}} 
@@ -54,9 +54,9 @@ std\+::vector$<$ std\+::tuple$<$ int, int, int $>$ $>$ {\bfseries neighbors\+Lis
 \doxysubsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::tuple$<$ int, int, int $>$$>$}]{list }\end{DoxyParamCaption})}
 
-\mbox{\hyperlink{class_graph}{Graph}} constructor 
+Konstruktor klasy graf 
 \begin{DoxyParams}{Parameters}
-{\em list} & the weighted neighbors list that represents the graph \\
+{\em list} & ważona lista sasiedzstwa reprezentujaca graf \\
 \hline
 \end{DoxyParams}
 
@@ -68,19 +68,19 @@ std\+::vector$<$ std\+::tuple$<$ int, int, int $>$ $>$ {\bfseries neighbors\+Lis
 \doxysubsubsection{\texorpdfstring{BFS()}{BFS()}}
 {\footnotesize\ttfamily bool Graph\+::\+BFS (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{graph,  }\item[{int}]{start,  }\item[{int}]{finish,  }\item[{std\+::vector$<$ int $>$ \&}]{path }\end{DoxyParamCaption})}
 
-Looks through the graph for the shortest path 
+Wyszykiwanie najkrutszej sciezki w grafie 
 \begin{DoxyParams}{Parameters}
-{\em graph} & incidence matrix of the target graph \\
+{\em graph} & macierz incydencji danego grafu \\
 \hline
-{\em start} & index of the vertex from which we start \\
+{\em start} & poczatkowy wierszolek \\
 \hline
-{\em finish} & index of the vertex to which we go \\
+{\em finish} & koncowy wierszolek \\
 \hline
-{\em path} & vector in which we write our road \\
+{\em path} & vektor przychowywajacy droge od start do finish \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-returns true if road exists, else returns false 
+zwraza true jesli droga istneje, w przeciwnym wypadku zwraca false 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_graph_a2080d157b7a30f8b17856f50f31e701d}\label{class_graph_a2080d157b7a30f8b17856f50f31e701d}} 
 \index{Graph@{Graph}!GetMatrix@{GetMatrix}}
@@ -88,8 +88,8 @@ returns true if road exists, else returns false
 \doxysubsubsection{\texorpdfstring{GetMatrix()}{GetMatrix()}}
 {\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ int $>$ $>$ Graph\+::\+Get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Allow us to get private matrix \begin{DoxyReturn}{Returns}
-matrix that represent the graph 
+Zwraca macierz incydencji na zewnatrz klasy \begin{DoxyReturn}{Returns}
+macierz incydencji reprezentujaca graf 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_graph_a6a268b6ab5ff823a1694609138b67e37}\label{class_graph_a6a268b6ab5ff823a1694609138b67e37}} 
 \index{Graph@{Graph}!MaxFlow@{MaxFlow}}
@@ -97,19 +97,19 @@ matrix that represent the graph
 \doxysubsubsection{\texorpdfstring{MaxFlow()}{MaxFlow()}}
 {\footnotesize\ttfamily int Graph\+::\+Max\+Flow (\begin{DoxyParamCaption}\item[{int}]{s,  }\item[{int}]{f,  }\item[{std\+::vector$<$ int $>$ \&}]{output,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{residual\+Output }\end{DoxyParamCaption})}
 
-Calculates maxflow of the graph with Edmund-\/\+Carp alghorithm 
+Oblicza maksymalny przeplyw od punktu s do punktu f 
 \begin{DoxyParams}{Parameters}
-{\em s} & source of the given graph \\
+{\em s} & zrodlo grafu \\
 \hline
-{\em f} & destinition of the flow \\
+{\em f} & ujscie grafu \\
 \hline
-{\em output} & vector that contains value of the destinition can be used as a source weights in the second step \\
+{\em output} & wagi zrodla po obliczaniu przeplywu \\
 \hline
-{\em residual\+Output} & the whole residual graph after calculating max flow \\
+{\em residual\+Output} & cala siec residualna \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-returns the value of the maxflow 
+zwraca wartosc maksymalnego przeplywu 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_graph_adb99f0478fd3f8fcc7ecc4efb95caf44}\label{class_graph_adb99f0478fd3f8fcc7ecc4efb95caf44}} 
 \index{Graph@{Graph}!PrintGraph@{PrintGraph}}
@@ -117,13 +117,13 @@ returns the value of the maxflow
 \doxysubsubsection{\texorpdfstring{PrintGraph()}{PrintGraph()}}
 {\footnotesize\ttfamily void Graph\+::\+Print\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Prints the inciedence matrix of the graph \mbox{\Hypertarget{class_graph_a14152456fc44964f9dd029ba193f09ab}\label{class_graph_a14152456fc44964f9dd029ba193f09ab}} 
+Wypisuje zawartosc macierzy incydencji \mbox{\Hypertarget{class_graph_a14152456fc44964f9dd029ba193f09ab}\label{class_graph_a14152456fc44964f9dd029ba193f09ab}} 
 \index{Graph@{Graph}!UpdateMatrix@{UpdateMatrix}}
 \index{UpdateMatrix@{UpdateMatrix}!Graph@{Graph}}
 \doxysubsubsection{\texorpdfstring{UpdateMatrix()}{UpdateMatrix()}}
 {\footnotesize\ttfamily void Graph\+::\+Update\+Matrix (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{matrix }\end{DoxyParamCaption})}
 
-Allow us to overwrite the existing matrix 
+Nadpisuje macierz incydencji nowa 
 \begin{DoxyParams}{Parameters}
 {\em matrix} & new incidience matrix \\
 \hline
@@ -134,11 +134,11 @@ Allow us to overwrite the existing matrix
 \doxysubsubsection{\texorpdfstring{UpdateMatrixRow()}{UpdateMatrixRow()}}
 {\footnotesize\ttfamily void Graph\+::\+Update\+Matrix\+Row (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{row,  }\item[{int}]{index }\end{DoxyParamCaption})}
 
-Updates some certain row of the matrix 
+Zmienia wagi pewnego wierszholku w grafie 
 \begin{DoxyParams}{Parameters}
-{\em row} & new vector containing the weighted edges \\
+{\em row} & nowy vector wag wierszholka \\
 \hline
-{\em index} & index of the vertex \\
+{\em index} & index wierszholka \\
 \hline
 \end{DoxyParams}
 
