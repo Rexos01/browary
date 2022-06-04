@@ -5,36 +5,29 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Запуск канала",
+            "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "Введите имя программы, например: ${workspaceFolder}/a.exe",
+            "program": "${workspaceFolder}/main.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
-            "pipeTransport": {
-                "debuggerPath": "/usr/bin/gdb",
-                "pipeProgram": "<Полный путь к программе канала, например: plink.exe>",
-                "pipeArgs": [],
-                "pipeCwd": ""
-            },
             "MIMode": "gdb",
+            "miDebuggerPath": "C:\\Program Files\\MinGW\\bin\\gdb.exe",
             "setupCommands": [
                 {
-                    "description": "Включить автоматическое форматирование для gdb",
+                    "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 },
                 {
-                    "description":  "Задать для варианта приложения дизассемблирования значение Intel",
+                    "description": "Set Disassembly Flavor to Intel",
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
             ]
         }
-        
-       
     ]
 }
