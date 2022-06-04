@@ -44,7 +44,10 @@ public:
     void UpdateMatrixOfCosts(std::vector<std::vector<EdgeData>> matrix);
     void PrintMatrixOfCosts();
     //std::vector<data> BellmanFord(std::vector<std::vector<EdgeData>> matrix, int start);  
-    void BellmanFord(int start);  
+    int BellmanFord(int start);  
+
+    bool isInVector(std::vector<int> t, int f);
+
 };
 
 #endif

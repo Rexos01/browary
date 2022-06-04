@@ -21,17 +21,29 @@ int main()
     std::cout << "Max flow from fields to breweries: " << newGraph.MaxFlow(source, dest, browarsOutput, residualGraph);
 
     std::cout << std::endl;
-    newGraph.UpdateMatrixOfCosts(GraphReader::addSourceToMatrixOfCosts(newGraph.GetMatrixOfCosts(), "sources.txt", 'b', 't'));
     newGraph.AssignToMatrixofcosts(residualGraph);
+    newGraph.UpdateMatrixOfCosts(GraphReader::addSourceToMatrixOfCosts(newGraph.GetMatrixOfCosts(), "sources.txt", 'p', 'b'));
+
+    std::cout << "Graph (capacity) after 1 MaxFlow:" << std::endl;
     newGraph.Print(residualGraph);
-        std::cout << std::endl;
-
+    std::cout << std::endl;
+    std::cout << "Graph (flow) after 1 MaxFlow:" << std::endl;
     newGraph.PrintMatrixOfCosts();
-        std::cout << std::endl;
+    std::cout << std::endl;
+
+    
+    int bf=1;
+
+    while((bf=newGraph.BellmanFord(source)) != -1);
+ 
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << "Graph (flow) after BellmanFord:" << std::endl;
+    //newGraph.PrintMatrixOfCosts(); //?????
 
 
-    newGraph.BellmanFord(source);
-    newGraph.PrintMatrixOfCosts();   //?????
 
     /*
         newGraph.UpdateMatrix(GraphReader::readToMatrix("brew_tavern.txt"));
@@ -52,3 +64,38 @@ int main()
     */
     return 0;
 }
+
+
+/*
+
+0 7 3 0 0 0 0 0 2
+0 0 0 0 0 0 0 0 6
+2 0 0 2 1 0 0 0 4
+0 4 1 0 0 0 0 0 0
+0 2 2 0 0 1 0 0 0
+0 0 3 0 0 0 0 0 0
+0 0 0 5 4 3 0 8 0
+0 0 0 0 0 0 12 0 0
+1 1 0 0 0 0 0 0 0 
+
+0 0 2 0 0 0 0 0 0
+0 0 0 4 2 0 0 0 0
+0 0 0 1 2 3 0 0 0
+0 0 0 0 0 0 5 0 0
+0 0 0 0 0 0 4 0 0
+0 0 0 0 0 0 3 0 0
+0 0 0 0 0 0 0 12 0 
+0 0 0 0 0 0 0 0 0
+2 6 4 0 0 0 0 0 0
+
+0 2 2 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+-2 0 0 3 5 0 0 0 0
+0 0 -3 0 0 0 0 0 0
+0 0 -5 0 0 1 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 1 0
+0 0 0 0 0 0 0 0 0
+1 1 1 0 0 0 0 0 0
+
+*/

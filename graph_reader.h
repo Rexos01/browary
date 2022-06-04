@@ -23,7 +23,6 @@ public:
     static std::vector<std::vector<int>> readToList(std::string path);
     static std::vector<std::vector<int>> addSource (std::vector<std::vector<int>> matrix, std::string path, char z, char u);
     static std::vector<std::vector<EdgeData>> addSourceToMatrixOfCosts(std::vector<std::vector<EdgeData>> matrix, std::string path, char z, char u);
-
 };
 
 #endif
