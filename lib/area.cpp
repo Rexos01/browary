@@ -64,14 +64,14 @@ std::vector<Point> Area::findConvexSet(std::vector<Point> points)
   // Droga "w górę", przeciwnie do ruchu wskazówek zegara
   Point activePoint = bottomLeftPoint;
   Point maxPoint = points[0];
+  points.erase(find(points.begin(), points.end(), bottomLeftPoint));
 
   while (maxPoint != topRightPoint)
   {
     maxPoint = points[0];
     for (int i = 0; i < points.size(); i++)
     {
-      int position = calculatePosition(activePoint, maxPoint, points[i]);
-      if (position < 0)
+      if (calculatePosition(activePoint, maxPoint, points[i]) < 0)
       {
         maxPoint = points[i];
       }
@@ -84,13 +84,14 @@ std::vector<Point> Area::findConvexSet(std::vector<Point> points)
   // Droga "w dół", zgodnie z ruchem wskazówek zegara
   Point minPoint = points[0];
   activePoint = topRightPoint;
+  points.push_back(bottomLeftPoint);
 
   while (minPoint != bottomLeftPoint && points.size() != 0)
   {
     minPoint = points[0];
     for (int i = 0; i < points.size(); i++)
     {
-      if (calculatePosition(activePoint, minPoint, points[i]) > 0)
+      if (calculatePosition(activePoint, minPoint, points[i]) < 0)
       {
         minPoint = points[i];
       }

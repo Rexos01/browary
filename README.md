@@ -49,7 +49,7 @@ Uruchomienie algorytmu wymaga utworzenia 3 plików z danymi według następując
 Plik dla etapu 1 powinien zawierać definicję krawędzi oraz przypisaną im przepustowość zdefiniowane następująco:
 
 ```
-[liczba krawędzi]
+[liczba wierzchołków]
 [początek krawędzi] [koniec krawędzi] [przepustowość]
 ```
 
